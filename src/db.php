@@ -3,12 +3,12 @@
 class DB{
     private $mysqli;
 
-    public function __construct($user, $password, $db, $host){
+    public function __construct($cfg){
 
-        $user = $user;
-        $password = $password;
-        $db = $db;
-        $host = $host;
+        $user = $cfg['user'];
+        $password = $cfg['password'];
+        $db = $cfg['database'];
+        $host = $cfg['host'];
 
         $this->mysqli = new mysqli($host,$user,$password);
         $this->mysqli->select_db($db);

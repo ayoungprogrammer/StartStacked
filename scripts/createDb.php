@@ -15,7 +15,7 @@ if ($mysqli->connect_errno) {
 }
 
 if(!$mysqli->select_db($db)){
-    $mysqli->query("Create database if not exists algorithms");
+    $mysqli->query("CREATE DATABASE IF NOT EXISTS ".$db);
     echo "DB does not exists, creating...\n";
 }else {
     echo "DB exists\n";
