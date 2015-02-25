@@ -1,3 +1,11 @@
 <h1><?php echo $title ?></h1>
 
+<?php if(config('env')=='staging'): ?>
+
+[<a href="./<?php echo $page.'&'?>=edit">edit</a>]
+
+<?php endif; ?>
+
+
+
 <?php echo $body ?>

@@ -45,7 +45,7 @@ function parse($str){
 
 	//Rel link
 	//[[text | link]] => <a href="./link">text</a>
-	$str = preg_replace('/\[\[([A-Za-z\_\s\'\-]+?)\|([A-Za-z\_\s\'\-]+?)\]\]/','<a href="./$2" target="_blank">$1</a>',$str);
+	$str = preg_replace('/\[\[([A-Za-z\_\s\'\-]+?)\|([A-Za-z\_\s\'\/\-]+?)\]\]/','<a href="./$2" target="_blank">$1</a>',$str);
 
 	//[[link]]  => <a href="./link">link</a>
 	$str = preg_replace('/\[\[([A-Za-z\_\s\'\-]+?)\]\]/','<a href="./$1" target="_blank">$1</a>',$str);
