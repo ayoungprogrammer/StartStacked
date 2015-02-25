@@ -1,0 +1,67 @@
+## Introduction
+
+There are three main types of serving the front-end of a website:
+
+* Basic 
+* Frontend Framework
+* Backend Rendering
+
+## Basic
+
+A basic front end is a static website that loads content every time a link is visited. When a user visits the URL, the server returns static files to the user.
+
+{{frontstack.png}}
+
+* **HTML** is the markup to tell the browser the layout and content of the page
+* **CSS** is the stylesheets used for styling and design
+* **JS** is a scripting language used to perform browser functions (eg animations)
+* **Media** is any media that the browser needs (images, icons, sounds, videos, etc)
+
+Here are steps that occur:
+
+1. The user types 'example.com/' in the browser.
+2. The browser sends a GET request for '/' to example.com.
+3. The server returns a static file index.html (the default file) which includes references to other resources: 'css/layout.css', 'js/main.js' and 'img/background.jpg'. 
+4. The browser sends parallel GET request for '/css/layout.cs', 'js/main.js' and 'img/background.jpg'.
+5. The server returns the requested resources in parallel from the file system.
+6. The browser loads all the resources and renders the webpage to the user.
+
+Usually, resources are cached meaning they are stored temporarily locally. When the user visits another page, they will receive a different HTML file, but they can reuse any resources that are cached.
+
+### Advantages
+* Easy setup using an Apache web server to serve static content. 
+* Requires very few resources (memory, runtime and space).
+### Disadvantages
+* Not scalable, you will have to create a new HTML file for every page you want
+* Very limited features
+### Recommended Use
+* Simple static site (personal, business site)
+
+## Frontend Framework
+
+A front end framework is usually a Javascript library that uses AJAX calls to load information from the server. The browser requests data for different URI's and the server responds with data which the framework displays. Instead of requesting HTML files for every page, a front end framework only requests raw data and is responsible the displaying the data.
+
+{{frontstack2.png}}
+
+1. The user types 'example.com/' in the browser.
+2. The browser sends a GET '/' request to example.com.
+3. The server returns a main html file which includes references to the framework library, all the templates, stylesheets, additional javascript files and media for the entire website. Essentially, all the resources for the website are requested the first time the user visits a site.
+4. The browser requests all the pages and resources for the website in parallel.
+5. The server returns all the requested resources in parallel.
+6. The browser now has all the templates and javascript for the website. The javascript controls rendering instead of the browser.
+7. When the user clicks on a page, the framework will send a request to the API of the server for data.
+8. The server will return the requested data.
+9. The framework will render the data using templates.
+
+### Advantages
+* Keeps front-end separate from back-end
+* Page is more responsive and user friendly
+### Disadvantages
+* Requires entire website in front-end (may be very bloated)
+* Front-end rendering is slower
+### Recommended Use
+
+
+## Backend Rendering
+
+

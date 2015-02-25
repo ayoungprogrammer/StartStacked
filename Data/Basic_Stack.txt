@@ -1,0 +1,32 @@
+## Introduction
+
+A stack is a collection of software you use to build an application or service. 
+
+Here is the most basic web stack that can be used for a website:
+
+{{basicstack.png}}
+
+Some basic definitions:
+
+ * **Users** are anybody who are using your app from either their mobile devises or computers. 
+ * The **web server** listens for requests from the client and performs routing to resources depending on the URL.
+ * The **app** processes the request and may use the database to store or retrieve data as part of the request
+ * The **database** stores long term data that needs to be stored
+
+This basic stack is best for small websites with mostly static content such as info sites, blogs and small web stores.
+
+Let's look at a more complex stack that a large tech company would use:
+
+{{fullstack.png}}
+
+There is a lot of action going on in this diagram but we will break it down to more understandable parts.
+
+* **Users** are people using/accessing the service. They could have different roles (e.g. buyer/seller) and be using different services
+* **Frontend Apps** / **Mobile Apps** are the applications that people will use to connect to your servers. They could be an app on your phone, a front-end framework, or just your browser.
+* The **firewall** protects the server from malicious attacks
+* The **Web Server** listens to incoming requests and based on the URI, forwards the request to the correct app. For example if the URI request was GET '/seller-dashboard/index', the request would be forwards to the seller dashboard backend app. If the URI request was GET '/buyer-dashboard/css/layout.css', the request would be forwarded to the buyer dashboard backend app.
+* The **backend apps** are applications that process the request to return something useful. The backend app may use the database for storing or retrieving data. 
+* **Production databases** are used for storing long term data. For example: customer data, transaction history or product data.
+* The **Data Pipeline** is responsible for copying data from the production databases to the analytic database. 
+* The **Analytic database** is separate copy of production databases used for analytics. It may have outdated information based on how fast the data pipeline is. We use different databases for analytics and production because running large queries on production databases will reduce performance. 
+* **Analytics apps** are applications that run queries on the analytic database to get different metrics on the data. The metrics can then be stored in a production database for access.
